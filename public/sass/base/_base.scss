@@ -1,0 +1,102 @@
+html {
+    font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 60%;
+    }
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(phone) {
+        font-size: 37.5%;
+    }
+    @include respond(small-phone) {
+        font-size: 27.5%;
+    }
+    @include respond(desktop) {
+        font-size: 67.5%;
+    }
+    @include respond(big-desktop) {
+        font-size: 72.5%;
+    }
+}
+
+body {
+    background-color: $color-grey-light-1;
+    margin: 0;
+    padding: 3rem;
+    font-size: 1.6rem;
+    overflow-x: hidden;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 4rem;
+}
+h2 {
+    font-weight: 500;
+    line-height: 3rem;
+    margin: .5rem 0;
+}
+h3 {
+    font-weight: 500;
+    line-height: 2.25rem;
+    margin: .25rem 0;
+}
+h4 {
+    font-weight: 500;
+    line-height: 2rem;
+}
+h5 {
+    font-weight: 500;
+}
+h6 {
+    font-weight: 500;
+}
+p {
+    line-height: 2.25rem;
+}
+
+.clear-defaults {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 550;
+    
+    &:focus {
+        outline: 0;
+    }
+}
+
+li {
+    padding-left: 1rem;
+
+    &:not(:last-child) {
+        padding-bottom: 2rem;
+    }
+}
+
+ol {
+    padding-left: 3rem;
+}
+
+#app {
+    overflow-x: hidden;
+}

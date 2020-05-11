@@ -1,0 +1,23 @@
+.form {
+    padding: 3rem 4rem;
+    background-size: 100%;
+    border-radius: .25rem;
+    overflow-y: auto;
+    display: inline-block;
+    text-align: left;
+
+    &__container {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    &__header {
+        text-align: center;
+        margin: 0 3rem;
+    }
+
+    &--skinny {
+        width: 28rem;
+        @include absCenter;
+    }
+}

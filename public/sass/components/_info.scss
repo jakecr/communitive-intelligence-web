@@ -1,0 +1,74 @@
+.info {
+    &__header {
+        display: block;
+        text-align: center;
+        margin: 0 1rem;
+    }
+
+    &__container {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__group {
+        display: inline-block;
+        width: 63rem;
+        height: 20rem;
+        transform: skewX(-7.5deg);
+        border-radius: .5rem;
+    }
+
+    &__content {
+        transform: skewX(7.5deg);
+        display: block;
+        height: 18rem;
+        padding: 1rem 1.3rem;
+        text-align: left;
+        width: 38.5rem;
+        position: absolute;
+        top: 0;
+
+        @include clearfix;
+
+        
+        &--outset {
+            width: 2.5rem;
+            height: 18rem;
+            float: left;
+            shape-outside: polygon(100% 0, 0 100%, 0 0);
+        }
+
+        &--left {
+            left: -1.3rem;
+            width: 41rem;
+        }
+        &--right {
+            right: -1.3rem;
+            padding-right: 3.4rem;
+        }
+    }
+
+    &__image {
+        background-size: cover;
+        background-position: center center;
+        transform: skewX(7.5deg);
+        display: inline-flex;
+        height: 20rem;
+        width: 22rem;
+        position: absolute;
+        top: 0;
+
+        @include clearfix;
+
+        &--right {
+            right: -1.2rem;
+            -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - 2.5rem) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, calc(100% - 2.5rem) 100%, 0 100%);
+        }
+        &--left {
+            left: -1.2rem;
+            -webkit-clip-path: polygon(2.6rem 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(2.6rem 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+}
