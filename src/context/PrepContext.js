@@ -1,6 +1,4 @@
 import createDataContext from './createDataContext'
-import communitiveIntelegenceApi from '../api/communitiveIntelegence'
-import Cookies from 'js-cookie'
 
 const tertiaryColors = [
     { color: 'blue', light: '#1d63b5', dark: '#1254a1' },

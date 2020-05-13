@@ -1,5 +1,5 @@
 import createDataContext from './createDataContext'
-import communitiveIntelegenceApi from '../api/communitiveIntelegence'
+import communitiveIntelligenceApi from '../api/communitiveIntelligence'
 
 const planReducer = (state, action) => {
     switch(action.type) {
@@ -42,7 +42,7 @@ const sendMessage = dispatch => async ({ username, message, conversation }) => {
         dispatch({ type: 'SET_CONVERSATION', payload: newConversation })
     
         try {
-            const response = await communitiveIntelegenceApi.post('/get-response', { conversation: newConversation })
+            const response = await communitiveIntelligenceApi.post('/get-response', { conversation: newConversation })
             const { botResponse, error } = response.data
             if(error) {
                 return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: error})
@@ -60,7 +60,7 @@ const sendMessage = dispatch => async ({ username, message, conversation }) => {
 
 const removeResponse = dispatch => async ({ text }) => {
     try {
-        const response = await communitiveIntelegenceApi.post('/remove-response', { text } )
+        const response = await communitiveIntelligenceApi.post('/remove-response', { text } )
         const { error } = response.data
         if(error) {
             return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: error})
@@ -75,7 +75,7 @@ const removeResponse = dispatch => async ({ text }) => {
 
 const reportMessage = dispatch => async ({ text }) => {
     try {
-        const response = await communitiveIntelegenceApi.post('/down-vote', { text } )
+        const response = await communitiveIntelligenceApi.post('/down-vote', { text } )
         const { error } = response.data
         if(error) {
             return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: error})
@@ -90,7 +90,7 @@ const reportMessage = dispatch => async ({ text }) => {
 
 const saveConversation = dispatch => async ({ conversation }) => {
     try {
-        const response = await communitiveIntelegenceApi.post('/save-conversation', { conversation } )
+        const response = await communitiveIntelligenceApi.post('/save-conversation', { conversation } )
         const { error } = response.data
         if(error) {
             return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: error})
