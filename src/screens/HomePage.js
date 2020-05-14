@@ -7,7 +7,7 @@ import IconInput from '../components/IconInput'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
-const NotFoundPage = () => {
+const HomePage = () => {
     const { state, clearErrorMessage, newConversation, removeResponse, reportMessage, saveConversation, saveUsername, sendMessage } = useContext(CommunicationContext)
     const { state: color, setColorScheme } = useContext(PrepContext)
     
@@ -301,4 +301,4 @@ const NotFoundPage = () => {
     )
 }
 
-export default NotFoundPage
+export default HomePage

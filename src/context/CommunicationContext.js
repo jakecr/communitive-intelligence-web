@@ -35,8 +35,22 @@ const saveUsername = dispatch => ({ username }) => {
 const sendMessage = dispatch => async ({ username, message, conversation }) => {
     if(conversation.length > 0 && conversation[conversation.length - 1].username == username) {
         dispatch({ type: 'ADD_ERROR_MESSAGE', payload: 'Please wait for the bot to respond.' })
-    }else if(message.replace(/\?|\,|\.|\s/gi, '').toLowerCase().trim() == 'idontknowhowtorespondtothatwhatdoyouthinkishouldsay') {
+    }else if(message.replace(/\?|\,|\.|\s|\'|\!|\(|\)|\&|\/|\:|\;|\"/gi, '').toLowerCase().trim() == 'idontknowhowtorespondtothatwhatdoyouthinkishouldsay') {
         dispatch({ type: 'ADD_ERROR_MESSAGE', payload: 'NICE TRY LAWWWWL' })
+    }else if(message.replace(/\?|\,|\.|\s|\'|\!|\(|\)|\&|\/|\:|\;|\"/gi, '').toLowerCase().trim() == 'nothing') {
+        try {
+            const response = await communitiveIntelligenceApi.post('/save-conversation', { conversation } )
+            const { error } = response.data
+            if(error) {
+                return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: error })
+            }else {
+                return dispatch({ type: 'ADD_ERROR_MESSAGE', payload: 'Ok, thanks for talking with me!' })
+            }
+            
+            dispatch({ type: 'SET_CONVERSATION', payload: [] })
+        }catch(err) {
+            dispatch({ type: 'ADD_ERROR_MESSAGE', payload: 'Failed to make request, try again later.' })
+        }
     }else {
         let newConversation = [ ...conversation, { username, text: message } ]
         dispatch({ type: 'SET_CONVERSATION', payload: newConversation })
