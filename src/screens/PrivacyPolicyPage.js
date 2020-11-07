@@ -66,15 +66,7 @@ const PrivacyPolicyPage = () => {
                         </p>
                         <ul>
                             <li style={{ color: color.contrast }}>
-                                <strong>To facilitate account creation and logon process.</strong> If you choose to link your account with us to a third party account (such as your Google or Facebook account), we use the information you allowed us to collect from those third parties to facilitate account creation and logon process for the performance of the contract.
-                            </li>
-                            
-                            <li style={{ color: color.contrast }}>
-                                <strong>To manage user accounts.</strong> We may use your information for the purposes of managing our account and keeping it in working order.
-                            </li>
-                            
-                            <li style={{ color: color.contrast }}>
-                                <strong>To respond to user inquiries/offer support to users.</strong> We may use your information to respond to your inquiries and solve any potential issues you might have with the use of our Services.
+                                <strong>To teach the bot.</strong> We only save your conversations with the bot if you click save conversation, and the bot learns from it.
                             </li>
                         </ul>
                         
